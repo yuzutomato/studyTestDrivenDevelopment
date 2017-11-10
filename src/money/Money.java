@@ -1,6 +1,6 @@
 package money;
 
-public class Money {
+public abstract class Money {
 	protected int amount;
 
 	public boolean equals(Object object) {
@@ -8,6 +8,8 @@ public class Money {
 		return amount == money.amount
 				&& getClass().equals(money.getClass());
 	}
+
+	abstract Money times(int multiplier);
 
 	static Dollar dollar(int amount) {
 		return new Dollar(amount);
