@@ -9,4 +9,7 @@ public class Money {
 				&& getClass().equals(money.getClass());
 	}
 
+	static Dollar dollar(int amount) {
+		return new Dollar(amount);
+	}
 }
