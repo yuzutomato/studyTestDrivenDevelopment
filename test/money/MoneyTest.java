@@ -36,4 +36,13 @@ class MoneyTest {
 		Money reduce = bank.reduce(sum, "USD");
 		assertEquals(Money.dollar(10), reduce); // reduce: 簡約する
 	}
+
+	@Test
+	public void testPlusReturnsSum() {
+		Money five = Money.dollar(5);
+		Expression result = five.plus(five);
+		Sum sum = (Sum) result;
+		assertEquals(five, sum.augend); // 被加算数
+		assertEquals(five, sum.added);
+	}
 }
