@@ -15,10 +15,6 @@ public class Money {
 				&& currency().equals(money.currency());
 	}
 
-	public Money times(int multiplier) {
-		return null;
-	}
-
 	public String currency() {
 		return currency;
 	}
@@ -34,5 +30,9 @@ public class Money {
 	@Override
 	public String toString() {
 		return amount + " " + currency;
+	}
+
+	public Money times(int multiplier) {
+		return new Money(amount * multiplier, currency);
 	}
 }
