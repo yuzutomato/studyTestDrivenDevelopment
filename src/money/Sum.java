@@ -9,7 +9,7 @@ public class Sum implements Expression {
 		this.added = added;
 	}
 
-	Money reduce(String to) {
+	public Money reduce(String to) {
 		int amount = augend.amount + added.amount;
 		return new Money(amount, to);
 	}
