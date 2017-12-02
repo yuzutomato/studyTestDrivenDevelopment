@@ -18,4 +18,8 @@ public class Sum implements Expression {
 				+ addend.reduce(bank, to).amount;
 		return new Money(amount, to);
 	}
+
+	public Expression times(int multiplier) {
+		return new Sum(augend.times(multiplier), addend.times(multiplier));
+	}
 }
